@@ -7,6 +7,7 @@
 
 // $connect= mysqli_connect($host,$user,$pass);
 // mysqli_select_db($database ,$connect);
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 class db
 {
@@ -76,7 +77,7 @@ class db
             $fields[$key] = " `$key` = '".$value."' ";
         }
         $sql .= implode(" , ",array_values($fields))." where ".$condition.";";
-    
+   // echo $sql;
         $result = mysqli_query($this->connect,$sql);
         if ( false===$result ) {
             printf("error: %s\n", mysqli_error($this->connect));

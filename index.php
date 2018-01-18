@@ -23,14 +23,10 @@ if($result_list){
         $html_list .= '
                 <tr>
                     <td>'.$i.'</td>
-                    <td ><a href="#" id="numid_'.$value['phone'].'">'.$value['fullname'].'</a></td>
-                    <td>'.$value['phone'].'</td>
-                     <td>'.$value['vendor'].'</td>
-                    <td>
-    
-        <span class="contents col-xs-12 col-sm-12 col-md-8"  id="numidlg_'.$value['phone'].'">'.$value['logs'].'</span>
-    
-    </td>
+                    <td ><a href="numlogs.php?id='.$value['ID'].'" >'.$value['fullname'].'</a></td>
+                    <td><a href="numlogs.php?id='.$value['ID'].'" >'.$value['phone'].'</a></td>
+                    <td>'.$value['vendor'].'</td>
+                    
                     
                     
                 </tr>
@@ -155,23 +151,13 @@ table, th, td {
                 <th>Full name</th>
                 <th>Phone</th>
                 <th>Vendor</th>
-                <th>Notes</th>
+                
           
                 
             </tr>
                
         </thead>
-        <tfoot>
-            
-             <tr>
-                <th></th>
-                <th><input type="text" class="form-control" id="add_fullname"></th>
-                <th><input type="text" class="form-control" id="add_phone"></th>
-                <th><input type="text" class="form-control" id="add_vendor"></th>
-                <th><input type="text" class="form-control" id="add_logs"> <button type="button" id="btn_add" class="btn btn-success">Add</button></th>
-                </tr>
-
-        </tfoot>
+        
         <tbody>
             '.$html_list.'
             
@@ -184,7 +170,7 @@ table, th, td {
 Full name and logs can edit, please click on that fields to edit
 
 </p>
-
+<a type="button" href="numlogs.php" class="btn btn-success">Add new</a>
 
 
 
